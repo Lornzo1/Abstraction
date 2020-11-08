@@ -14,15 +14,17 @@ namespace Stacks
             stack_pointer += 1;
             return new_stack;
         }
-        public List<char> Pop()
+        public char Pop()
         {
+            char a = ' ';
             if (new_stack.Any())
             {
+                a = new_stack[new_stack.Count - 1];
                 new_stack.RemoveAt(new_stack.Count - 1);
             }
             
             else Console.WriteLine("underflow");
-            return new_stack;
+            return a;
         }
         
     }
