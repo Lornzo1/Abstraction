@@ -32,7 +32,38 @@ namespace Stacks
             else Console.WriteLine("underflow");
             return a;
         }
-        
+        public int Operator(string input)
+        {
+            foreach (var i in (input.Split(' ')))
+            {
+
+                try
+                {
+                    Push(Convert.ToChar(Convert.ToInt32(i)));
+                }
+                catch
+                {
+                    int num2 = Convert.ToInt32(Pop());
+                    int num1 = Convert.ToInt32(Pop());
+                    switch (i)
+                    {
+                        case "+":
+                            Push(Convert.ToChar(num1 + num2));
+                            break;
+                        case "-":
+                            Push(Convert.ToChar(num1 - num2));
+                            break;
+                        case "/":
+                            Push(Convert.ToChar(num1 / num2));
+                            break;
+                        case "*":
+                            Push(Convert.ToChar(num1 * num2));
+                            break;
+                    }
+                }
+            }
+            return Pop();
+        }
     }
     class Program
     {
@@ -49,6 +80,7 @@ namespace Stacks
             Console.WriteLine(myStack.Pop());
             Console.WriteLine(myStack.Pop());
             Console.WriteLine(myStack.Pop());
+            Console.WriteLine(myStack.Operator("5 4 * 3 2 * + 1 -"));
         }
     }
 }
