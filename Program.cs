@@ -20,15 +20,17 @@ namespace Stacks
             else Console.WriteLine("overflow");
             return new_stack;
         }
-        public char[] Pop()
+        public char Pop()
         {
+            char a = ' '; 
             if (stack_pointer != -1)
             {
+                a = new_stack[stack_pointer];
                 new_stack[stack_pointer] = ' ';
                 stack_pointer -= 1;
             }
             else Console.WriteLine("underflow");
-            return new_stack;
+            return a;
         }
         
     }
