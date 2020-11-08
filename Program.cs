@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+
 namespace Stacks
 {
     //this is my fist time using classes so apologies it it is not refined however I thought I would give it a go
@@ -26,7 +28,39 @@ namespace Stacks
             else Console.WriteLine("underflow");
             return a;
         }
-        
+        public int Operator(string input)
+        {
+            foreach (var i in (input.Split(' ').ToList()))
+            {
+                
+                try
+                {
+                    Push(Convert.ToChar(Convert.ToInt32(i)));
+                }
+                catch 
+                {
+                    int num2 = Convert.ToInt32(Pop());
+                    int num1 = Convert.ToInt32(Pop());
+                    Console.WriteLine(Convert.ToString(num1) + i + Convert.ToString(num2));
+                    switch (i)
+                    {
+                        case "+":
+                            Push(Convert.ToChar(num1 + num2));
+                            break;
+                        case "-":
+                            Push(Convert.ToChar(num1 - num2));
+                            break;
+                        case "/":
+                            Push(Convert.ToChar(num1 / num2));
+                            break;
+                        case "*":
+                            Push(Convert.ToChar(num1 * num2));
+                            break;
+                    }
+                }
+            }
+            return Pop();
+        }
     }
     class Program
     {
@@ -34,7 +68,7 @@ namespace Stacks
         {
             Console.WriteLine("Stack Tester!");
             stack myStack = new stack();
-            myStack.Push('m');
+            /*myStack.Push('m');
             myStack.Push('B');
             Console.WriteLine(string.Join(",",(myStack.Pop())));
             myStack.Push('o');
@@ -42,7 +76,8 @@ namespace Stacks
             Console.WriteLine(string.Join(",",(myStack.Pop())));
             Console.WriteLine(string.Join(",", (myStack.Pop())));
             Console.WriteLine(string.Join(",", (myStack.Pop())));
-            Console.WriteLine(string.Join(",", (myStack.Pop())));
+            Console.WriteLine(string.Join(",", (myStack.Pop())));*/
+            Console.WriteLine(myStack.Operator("5 4 * 3 2 * + 1 -"));
         }
     }
 }
