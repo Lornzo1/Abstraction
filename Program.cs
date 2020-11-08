@@ -8,10 +8,6 @@ namespace Stacks
     {
         public List<char> new_stack = new List<char>();
         public int stack_pointer = -1;
-        /*public stack(int s)
-        {
-            new_stack = new char[s];
-        }*/
         public List<char> Push(char ToBe)
         {
             new_stack.Add(ToBe);
@@ -38,13 +34,13 @@ namespace Stacks
             stack myStack = new stack();
             myStack.Push('m');
             myStack.Push('B');
-            Console.WriteLine(string.Join("\t",(myStack.Pop())));
+            Console.WriteLine(string.Join(",",(myStack.Pop())));
             myStack.Push('o');
             myStack.Push('o');
-            Console.WriteLine(string.Join("\t", (myStack.Pop())));
-            Console.WriteLine(string.Join("\t", (myStack.Pop())));
-            Console.WriteLine(string.Join("\t", (myStack.Pop())));
-            Console.WriteLine(string.Join("\t", (myStack.Pop())));
+            Console.WriteLine(string.Join(",",(myStack.Pop())));
+            Console.WriteLine(string.Join(",", (myStack.Pop())));
+            Console.WriteLine(string.Join(",", (myStack.Pop())));
+            Console.WriteLine(string.Join(",", (myStack.Pop())));
         }
     }
 }
