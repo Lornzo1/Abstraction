@@ -41,7 +41,6 @@ namespace Stacks
                 {
                     int num2 = Convert.ToInt32(Pop());
                     int num1 = Convert.ToInt32(Pop());
-                    Console.WriteLine(Convert.ToString(num1) + i + Convert.ToString(num2));
                     switch (i)
                     {
                         case "+":
@@ -68,7 +67,7 @@ namespace Stacks
         {
             Console.WriteLine("Stack Tester!");
             stack myStack = new stack();
-            /*myStack.Push('m');
+            myStack.Push('m');
             myStack.Push('B');
             Console.WriteLine(string.Join(",",(myStack.Pop())));
             myStack.Push('o');
@@ -76,7 +75,7 @@ namespace Stacks
             Console.WriteLine(string.Join(",",(myStack.Pop())));
             Console.WriteLine(string.Join(",", (myStack.Pop())));
             Console.WriteLine(string.Join(",", (myStack.Pop())));
-            Console.WriteLine(string.Join(",", (myStack.Pop())));*/
+            Console.WriteLine(string.Join(",", (myStack.Pop())));
             Console.WriteLine(myStack.Operator("5 4 * 3 2 * + 1 -"));
         }
     }
