@@ -4,16 +4,16 @@ using System.Text;
 
 namespace Abstraction
 {
-    class Operations
+    static class RPN
     {
-        static public string RPN(string input)
+        static public int Converter(string input)
         {
-            stack<string> myStack = new stack<string>(10);
-            foreach (var i in input.Split(' '))
+            stack<int> myStack = new stack<int>(10);
+            foreach ( string i in input.Split(' '))
             {
                 try
                 {
-                    myStack.Push(Convert.ToString(i));
+                    myStack.Push(Convert.ToInt32(i));
                 }
                 catch
                 {
@@ -22,16 +22,16 @@ namespace Abstraction
                     switch (i)
                     {
                         case "+":
-                            myStack.Push(Convert.ToString(num1 + num2));
+                            myStack.Push(num1 + num2);
                             break;
                         case "-":
-                            myStack.Push(Convert.ToString(num1 - num2));
+                            myStack.Push(num1 - num2);
                             break;
                         case "/":
-                            myStack.Push(Convert.ToString(num1 / num2));
+                            myStack.Push(num1 / num2);
                             break;
                         case "*":
-                            myStack.Push(Convert.ToString(num1 * num2));
+                            myStack.Push(num1 * num2);
                             break;
                     }
                 }

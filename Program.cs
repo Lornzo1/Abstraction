@@ -6,18 +6,18 @@ namespace Abstraction
     {
         static void Main(string[] args)
         {
-            /*          Console.WriteLine("Stack Tester!");
-                      stack<char> myStack = new stack<char>(10);
-                      myStack.Push('m');
-                      myStack.Push('B');
-                      Console.WriteLine(myStack.Pop());
-                      myStack.Push('o');
-                      myStack.Push('o');
-                      Console.WriteLine(myStack.Pop());
-                      Console.WriteLine(myStack.Pop());
-                      Console.WriteLine(myStack.Pop());
-                      Console.WriteLine(myStack.Pop());
-                      Console.WriteLine(Operator.RPN("5 4 * 3 2 * + 1 -"));*/
+            Console.WriteLine("Stack Tester!");
+            stack<char> myStack = new stack<char>(10);
+            myStack.Push('m');
+            myStack.Push('B');
+            Console.WriteLine(myStack.Pop());
+            myStack.Push('o');
+            myStack.Push('o');
+            Console.WriteLine(myStack.Pop());
+            Console.WriteLine(myStack.Pop());
+            Console.WriteLine(myStack.Pop());
+            Console.WriteLine(myStack.Pop());
+            Console.WriteLine(RPN.Converter("5 4 * 3 2 * + 1 -"));
             queue<int> myQueue = new queue<int>(5);
             myQueue.Push(5);
             myQueue.Push(3);
