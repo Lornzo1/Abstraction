@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stacks
+namespace Abstraction
 {
     class Program
     {

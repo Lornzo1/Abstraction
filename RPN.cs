@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Stacks
+namespace Abstraction
 {
     class Operations
     {
