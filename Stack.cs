@@ -23,7 +23,7 @@ namespace Abstraction
             else Console.WriteLine("overflow");
             return new_stack;
         }
-        public T Pop()
+        public dynamic Pop()
         {
             T a = default;
             if (stack_pointer != -1)
@@ -32,7 +32,7 @@ namespace Abstraction
                 new_stack[stack_pointer] = default;
                 stack_pointer -= 1;
             }
-            else Console.WriteLine("underflow");
+            else return "underflow";
             return a;
         }
     }
